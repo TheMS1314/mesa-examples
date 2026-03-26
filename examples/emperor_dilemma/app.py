@@ -6,7 +6,6 @@ from mesa.visualization import (
     make_plot_component,
 )
 from mesa.visualization.components.portrayal_components import AgentPortrayalStyle
-
 from model import EmperorModel
 
 # --- Colors ---
@@ -89,9 +88,7 @@ model_params = {
         "value": 42,
         "label": "Random Seed",
     },
-    "fraction_true_believers": Slider(
-        "Fraction True Believers", 0.05, 0.0, 1.0, 0.01
-    ),
+    "fraction_true_believers": Slider("Fraction True Believers", 0.05, 0.0, 1.0, 0.01),
     "k": Slider("Enforcement Cost (K)", 0.125, 0.0, 0.5, 0.025),
     "homophily": {
         "type": "Select",
@@ -99,9 +96,7 @@ model_params = {
         "values": [True, False],
         "label": "Cluster Believers (Homophily)?",
     },
-    "fraction_whistleblowers": Slider(
-        "Fraction Whistleblowers", 0.0, 0.0, 0.5, 0.01
-    ),
+    "fraction_whistleblowers": Slider("Fraction Whistleblowers", 0.0, 0.0, 0.5, 0.01),
     "width": 25,
     "height": 25,
 }

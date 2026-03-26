@@ -1,10 +1,10 @@
 import random
 
+from agents import EmperorAgent, WhistleblowerAgent
 from mesa import Model
 from mesa.datacollection import DataCollector
 from mesa.discrete_space.grid import OrthogonalMooreGrid
 
-from agents import EmperorAgent, WhistleblowerAgent
 
 class EmperorModel(Model):
     """The Emperor's Dilemma Model — extended.
@@ -134,11 +134,7 @@ def compute_belief_gap(model):
 
 
 def compute_whistleblowers_defying(model):
-    whistleblowers = [
-        a for a in model.agents if a.agent_type == "whistleblower"
-    ]
+    whistleblowers = [a for a in model.agents if a.agent_type == "whistleblower"]
     if not whistleblowers:
         return 0
-    return sum(
-        1 for a in whistleblowers if a.compliance != 1
-    ) / len(whistleblowers)
+    return sum(1 for a in whistleblowers if a.compliance != 1) / len(whistleblowers)
